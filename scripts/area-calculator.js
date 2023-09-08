@@ -1,13 +1,13 @@
 
 // Reusable function for get value from HTML(DOM) and set value in HTML(Dom)
-function getFieldValueById(fieldId){
+function getInputValue(fieldId){
     const inputField = document.getElementById(fieldId);
     const inputFieldText = inputField.value;
     const value = parseFloat(inputFieldText);
     inputField.value = "";
     return value;
 }
-function setElementValueById(elementId, value){
+function setElementInnerText(elementId, value){
     const element = document.getElementById(elementId);
     const twoDecimalValue = value.toFixed(2);
     element.innerText = twoDecimalValue;
@@ -15,43 +15,43 @@ function setElementValueById(elementId, value){
 
 //  Six(6) Geometric - Area Calculation
 function calculateTriangleArea(){
-    const base = getFieldValueById('triangle-base');
-    const height = getFieldValueById('triangle-height');
+    const base = getInputValue('triangle-base');
+    const height = getInputValue('triangle-height');
     const area = 0.5 * base * height;
-    setElementValueById('triangle-area', area);
+    setElementInnerText('triangle-area', area);
 }
 
 function calculateRectangleArea(){
-    const width = getFieldValueById('rectangle-width');
-    const length = getFieldValueById('rectangle-length');
+    const width = getInputValue('rectangle-width');
+    const length = getInputValue('rectangle-length');
     const area = width * length;
-    setElementValueById('rectangle-area', area);
+    setElementInnerText('rectangle-area', area);
 }
 
 function calculateParallelogramArea(){
-    const base = getFieldValueById('parallelogram-base');
-    const height = getFieldValueById('parallelogram-height');
+    const base = getInputValue('parallelogram-base');
+    const height = getInputValue('parallelogram-height');
     const area = base * height;
-    setElementValueById('parallelogram-area', area);
+    setElementInnerText('parallelogram-area', area);
 }
 
 function calculateRhombusArea(){
-    const d1 = getFieldValueById('rhombus-d1');
-    const d2 = getFieldValueById('rhombus-d2');
+    const d1 = getInputValue('rhombus-d1');
+    const d2 = getInputValue('rhombus-d2');
     const area = 0.5 * d1 * d2;
-    setElementValueById('rhombus-area', area);
+    setElementInnerText('rhombus-area', area);
 }
 
 function calculatePentagonArea(){
-    const perimeter = getFieldValueById('pentagon-perimeter');
-    const apothem = getFieldValueById('pentagon-apothem');
+    const perimeter = getInputValue('pentagon-perimeter');
+    const apothem = getInputValue('pentagon-apothem');
     const area = 0.5 * perimeter * apothem;
-    setElementValueById('pentagon-area', area);
+    setElementInnerText('pentagon-area', area);
 }
 
 function calculateEllipseArea(){
-    const major = getFieldValueById('ellipse-major-axis');
-    const minor = getFieldValueById('ellipse-minor-axis');
+    const major = getInputValue('ellipse-major-axis');
+    const minor = getInputValue('ellipse-minor-axis');
     const area = Math.PI * major * minor;
-    setElementValueById('ellipse-area', area);
+    setElementInnerText('ellipse-area', area);
 }
