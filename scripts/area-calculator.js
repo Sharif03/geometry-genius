@@ -7,10 +7,10 @@ function getInputValue(fieldId){
     inputField.value = "";
     return value;
 }
-function setElementInnerText(elementId, value){
+function setElementInnerText(elementId, area){
     const element = document.getElementById(elementId);
-    const twoDecimalValue = value.toFixed(2);
-    element.innerText = twoDecimalValue;
+    const areaWithTwoDecimalValue = area.toFixed(2);
+    element.innerText = areaWithTwoDecimalValue;
 }
 
 //  Six(6) Geometric - Area Calculation
