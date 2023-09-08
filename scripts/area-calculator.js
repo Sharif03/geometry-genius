@@ -1,9 +1,10 @@
 
 // Reusable function for get value from HTML(DOM) and set value in HTML(Dom)
 function getFieldValueById(fieldId){
-    const fieldValue = document.getElementById(fieldId);
-    const fieldValueText = fieldValue.value;
-    const value = parseFloat(fieldValueText);
+    const inputField = document.getElementById(fieldId);
+    const inputFieldText = inputField.value;
+    const value = parseFloat(inputFieldText);
+    inputField.value = "";
     return value;
 }
 function setElementValueById(elementId, value){
