@@ -24,6 +24,17 @@ function dataValidate(number){
     }
 }
 
+// add to calculation entry
+function addToCalculationEntry(areaType, area){
+    const calculationEntry = document.getElementById('calculation-entry');
+
+    const p = document.createElement('p');
+    p.classList.add('my-4');
+    const count = calculationEntry.childElementCount;
+    p.innerHTML =  `${count + 1}.  ${areaType} ${area.toFixed(2)} cm<sup>2</sup>   <button class="btn btn-xs btn-success">Convert m<sup>2</sup></button>`;
+    calculationEntry.appendChild(p);
+}
+
 //  Six(6) Geometric - Area Calculation
 function calculateTriangleArea(){
     const base = getInputValue('triangle-base');
@@ -36,6 +47,9 @@ function calculateTriangleArea(){
     else{
         const area = 0.5 * base * height;
         setElementInnerText('triangle-area', area);
+
+        // add to calculation entry
+        addToCalculationEntry('Triangle', area);
     }
 }
 
@@ -48,6 +62,9 @@ function calculateRectangleArea(){
     else{
         const area = width * length;
         setElementInnerText('rectangle-area', area);
+
+         // add to calculation entry
+         addToCalculationEntry('Rectangle', area);
     }
 }
 
@@ -75,6 +92,9 @@ function calculateRhombusArea(){
     else{
         const area = 0.5 * d1 * d2;
         setElementInnerText('rhombus-area', area);
+
+        // add to calculation entry
+        addToCalculationEntry('Rhombus', area);
     }
 }
 
@@ -87,6 +107,9 @@ function calculatePentagonArea(){
     else{
         const area = 0.5 * perimeter * apothem;
         setElementInnerText('pentagon-area', area);
+
+        // add to calculation entry
+        addToCalculationEntry('Pentagon', area);
     }
 }
 
@@ -99,16 +122,9 @@ function calculateEllipseArea(){
     else{
         const area = Math.PI * major * minor;
         setElementInnerText('ellipse-area', area); 
+
+        // add to calculation entry
+        addToCalculationEntry('Ellipse', area);
     }
 }
 
-// add to calculation entry
-function addToCalculationEntry(areaType, area){
-    const calculationEntry = document.getElementById('calculation-entry');
-    const p = document.createElement('p');
-    p.classList.add('my-4');
-    const count = calculationEntry.childElementCount;
-    p.innerHTML =  `${count + 1}.  ${areaType} ${area.toFixed(2)} cm<sup>2</sup>   <button class="btn btn-xs btn-success">Convert m<sup>2</sup></button>`;
-
-    calculationEntry.appendChild(p);
-}
