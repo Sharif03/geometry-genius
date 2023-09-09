@@ -60,6 +60,9 @@ function calculateParallelogramArea(){
     else{
         const area = base * height;
         setElementInnerText('parallelogram-area', area);
+        
+        // add to calculation entry
+        addToCalculationEntry('Parallelogram', area);
     }
 }
 
@@ -97,4 +100,15 @@ function calculateEllipseArea(){
         const area = Math.PI * major * minor;
         setElementInnerText('ellipse-area', area); 
     }
+}
+
+// add to calculation entry
+function addToCalculationEntry(areaType, area){
+    const calculationEntry = document.getElementById('calculation-entry');
+    const p = document.createElement('p');
+    p.classList.add('my-4');
+    const count = calculationEntry.childElementCount;
+    p.innerHTML =  `${count + 1}.  ${areaType} ${area.toFixed(2)} cm<sup>2</sup>   <button class="btn btn-xs btn-success">Convert m<sup>2</sup></button>`;
+
+    calculationEntry.appendChild(p);
 }
