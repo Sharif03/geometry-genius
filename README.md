@@ -1,4 +1,4 @@
-# Project Name: Geometry Genius(Area calculating)
+# Geometry Genius(Area calculating)
 ### Click the link below to calculate your Geometric Area: 
 [Geometric Area Calculate](https://prismatic-torte-846260.netlify.app/)
 
